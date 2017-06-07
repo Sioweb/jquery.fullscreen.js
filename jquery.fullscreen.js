@@ -8,6 +8,7 @@
 
     /* Enter PluginOptions */
     $[pluginName+'Default'] = {
+        container: document,
         onchange: function() {}
     };
 
@@ -21,6 +22,7 @@
             selfObj = this;
             this.elem = elem;
             this.item = $(this.elem);
+            this.container = $(this.container);
             this.loaded();
         };
 
