@@ -8,40 +8,20 @@
 
     /* Enter PluginOptions */
     $[pluginName+'Default'] = {
-        enabled: true,
-        container: window,
-        isHtml: false,
-
         onchange: function() {}
     };
 
     PluginClass = function() {
 
         var selfObj = this;
-            
         this.initOptions = new Object($[pluginName+'Default']);
-
         this.item = false;
 
         this.init = function(elem) {
             selfObj = this;
-
-            if(!this.container)
-                this.container = 'body';
             this.elem = elem;
             this.item = $(this.elem);
-            this.container = $(this.container);
-            this.isHTML = selfObj.item[0].tagName.toLowerCase() === 'html';
-
             this.loaded();
-        };
-
-        this.disable = function() {
-            selfObj.enabled = false;
-        };
-
-        this.enable = function() {
-            selfObj.enabled = true;
         };
 
 
